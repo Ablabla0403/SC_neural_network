@@ -247,7 +247,7 @@ int train_label[120] = {
     float max=0,temp=0,max_cand=0;
     sc.APC(layer_0[0],layer_1[0]);
 
-for(int k=0;k<50;k++){
+for(int k=0;k<30;k++){
     cout << "forward processing!" << k << "th epoch" << endl;
         for(int i=0; i<4; i++){
             layer_0[i] = sc.number_gen(train_data[k][i]);
@@ -381,18 +381,8 @@ for(int k=0;k<50;k++){
             
         }
         for(int j=0;j<3;j++){
-            size_t answer1 = 0;
-            size_t answer2 = 0;
-            for(int i = 0; i< bit_len; i++){
-                if (layer_3[j].h[i] == true){
-                    answer1 += 1;
-                }
-                if (layer_3[j].l[i] == true){
-                    answer2 += 1;
-                }
-            }
-            temp = (2*answer1/bit_len - 1)/(2*answer2/bit_len - 1);
-            cout<<temp<<endl;
+            int temp = sc.print(layer_3[j]);
+            int max = 0;
             if(j==0){
                 max = temp;
                 max_cand = 0;

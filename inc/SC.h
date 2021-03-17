@@ -13,7 +13,7 @@
 #include <stdlib.h>
 #include <time.h>
 using namespace std;
-const int bit_len = 500000;
+const int bit_len = 400000;
 const double lr = 0.0001;
 
 struct ESL{  //數字struct，一個存分子一個存分母
